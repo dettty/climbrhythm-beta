@@ -40,6 +40,13 @@ dt{font-weight:600}
 dd{margin:0;min-width:0;color:var(--ink)}
 @media (max-width:520px){dl{grid-template-columns:1fr;row-gap:.25rem}dd{padding-bottom:.75rem}}
 .note{color:var(--muted);font-size:.95rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;max-width:38rem}
+.shots.two{max-width:25rem}
+.shots.one{max-width:12rem}
+figure{margin:0;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+figure img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--surface)}
+.watch img{border-radius:22%;border:6px solid #1b1b1b}
+figcaption{font-size:.85rem;color:var(--muted);line-height:1.35}
 .addr{font-weight:600;user-select:all;overflow-wrap:anywhere}
 footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font-size:.9rem}
 </style>
@@ -71,6 +78,11 @@ footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font
 <section>
   <h2 data-de="Eine Session aufzeichnen" data-en="Record a session"></h2>
   <p data-de="Wähle auf der Startseite deine Sportart und tippe auf „Session starten“. Die Session läuft dann über dein ganzes Training durch. Währenddessen trägst du beliebig viele Routen, Boulder, Sätze oder Timer-Runden ein. So zeichnest du die Gesamtzeit der Session auf und zusätzlich die Belastungszeiten: wie lange du tatsächlich an der Wand, am Board oder im Satz warst. Mit Apple Watch kommt dein Puls dazu. Am Ende beendest du die Session und kannst festhalten, wie sie sich angefühlt hat, mit einem kurzen Kommentar." data-en="Pick your sport on the start screen and tap “Start session”. The session then runs through your whole training. Along the way you record as many routes, boulders, sets or timer rounds as you like. That gives you the total time of the session and, in addition, your effort times: how long you were actually on the wall, on the board or in a set. With an Apple Watch your heart rate is added. When you finish, you can note how the session felt and add a short comment."></p>
+  <div class="shots">
+    <figure><img data-shot="sports" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Sportart wählen" data-en="Pick your sport"></figcaption></figure>
+    <figure><img data-shot="bouldering" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Einen Boulder bewerten" data-en="Rate a boulder"></figcaption></figure>
+    <figure><img data-shot="hangboard" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Hangboard-Timer mit „Weiter“" data-en="Hangboard timer with “Next”"></figcaption></figure>
+  </div>
   <dl>
     <dt data-de="Bouldern, Klettern" data-en="Bouldering, climbing"></dt>
     <dd data-de="Starte und beende jeden Versuch, danach bewertest du ihn kurz: Grad und Ergebnis (Versuch, Begehung, Flash), auf Wunsch Wandneigung, Länge in Metern oder Zügen, Gefühl und Notiz. Welche Angaben gefragt werden, legst du in den Einstellungen fest." data-en="Start and stop each attempt, then rate it briefly: grade and result (attempt, send, flash), optionally wall angle, length in metres or moves, feeling and a note. You choose in Settings which details are asked."></dd>
@@ -88,11 +100,17 @@ footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font
 <section>
   <h2 data-de="Apple Watch" data-en="Apple Watch"></h2>
   <p data-de="Die Watch zeigt die laufende Session und steuert sie: Versuch starten und beenden, bewerten, Satz oder Timer starten, pausieren. Sie misst den Puls und gibt die Timer-Signale am Handgelenk. Die Session selbst startest du am iPhone; das iPhone sollte in Reichweite sein." data-en="The Watch shows the running session and controls it: start and stop an attempt, rate it, start a set or timer, pause. It measures your heart rate and gives the timer signals on your wrist. You start the session on the iPhone; keep the iPhone within reach."></p>
+  <div class="shots one">
+    <figure class="watch"><img data-shot="watch" width="416" height="496" alt="" loading="lazy"><figcaption data-de="Laufende Boulder-Session auf der Watch" data-en="Running bouldering session on the Watch"></figcaption></figure>
+  </div>
 </section>
 
 <section>
   <h2 data-de="Zyklen" data-en="Cycles"></h2>
   <p data-de="Ein Zyklus ist ein Zeitraum mit Zielen: wie oft du welche Sportart trainieren willst. Du findest die Zyklen über die Startseite; dort siehst du auch, was im laufenden Zyklus schon geschafft ist." data-en="A cycle is a period with goals: how often you want to train which sport. You reach your cycles from the start screen, which also shows what you have already done in the current cycle."></p>
+  <div class="shots one">
+    <figure><img data-shot="planning" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Zyklus mit Kalender, Zielen und Einheiten" data-en="Cycle with calendar, goals and workouts"></figcaption></figure>
+  </div>
   <dl>
     <dt data-de="Planen" data-en="Plan"></dt>
     <dd data-de="Mit + legst du Beginn, Dauer und Ziele fest, zum Beispiel 2 Wochen mit 1 × Kraft, 3 × Klettern, 1 × Bouldern, 1 × Hangboard und 2 × Laufen. Zyklen überschneiden sich nicht; ein neuer kann direkt an den vorigen anschließen." data-en="With + you set start, length and goals, for example 2 weeks with 1 × strength, 3 × climbing, 1 × bouldering, 1 × hangboard and 2 × running. Cycles do not overlap; a new one can follow straight after the previous one."></dd>
@@ -111,6 +129,10 @@ footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font
 
 <section>
   <h2 data-de="Verlauf und Statistik" data-en="History and statistics"></h2>
+  <div class="shots two">
+    <figure><img data-shot="history" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Verlauf" data-en="History"></figcaption></figure>
+    <figure><img data-shot="statistics" width="480" height="1044" alt="" loading="lazy"><figcaption data-de="Statistik mit Tageskurven" data-en="Statistics with daily curves"></figcaption></figure>
+  </div>
   <dl>
     <dt data-de="Verlauf" data-en="History"></dt>
     <dd data-de="Alle Sessions mit Versuchen, Übungen und Pulskurve. Jede Session lässt sich nachträglich bearbeiten." data-en="All sessions with attempts, exercises and heart rate curve. Every session can be edited later."></dd>
@@ -139,6 +161,7 @@ footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font
   function show(l){
     lang=l;document.documentElement.lang=l;
     document.querySelectorAll("[data-de]").forEach(function(n){n.textContent=n.getAttribute("data-"+l)});
+    document.querySelectorAll("img[data-shot]").forEach(function(n){n.src="img/"+n.getAttribute("data-shot")+"-"+l+".jpg";var c=n.parentNode.querySelector("figcaption");n.alt=c?c.textContent:""});
     document.getElementById("lang-de").setAttribute("aria-pressed",l==="de");
     document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
     try{localStorage.setItem("lang",l)}catch(e){}
