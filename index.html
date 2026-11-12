@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ClimbRhythm Beta Guide</title>
+<meta name="robots" content="noindex">
+<style>
+/* Layout: one reading column; install steps as the only numbered sequence, sports as a quiet two-column list. Colours follow the app's stone & sage. */
+:root{--paper:#f1eee5;--surface:#e7e3d6;--ink:#293124;--muted:#5b6554;--green:#48603c;--line:#cfcabb;
+  --display:"Avenir Next","Segoe UI",system-ui,sans-serif;--body:-apple-system,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#1c211a;--surface:#262d23;--ink:#e9e8dc;--muted:#a7b09d;--green:#b5cf9a;--line:#3a4335;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1c211a;--surface:#262d23;--ink:#e9e8dc;--muted:#a7b09d;--green:#b5cf9a;--line:#3a4335;color-scheme:dark}
+*{box-sizing:border-box}
+img{max-width:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.page{max-width:44rem;margin:0 auto;padding-block:2rem 4rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:2.75rem}
+header{display:flex;flex-direction:column;gap:1.25rem}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;font-family:var(--display);font-weight:600;font-size:1.1rem}
+.brand img{width:44px;height:44px;border-radius:11px;display:block}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:500 .85rem var(--body);color:var(--muted);background:none;border:0;padding:.4rem .9rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--green);color:var(--paper)}
+.lang button:focus-visible,a:focus-visible,.copy:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lead{font-size:1.1rem;color:var(--muted);margin:0;max-width:36rem}
+section{display:flex;flex-direction:column;gap:1rem}
+h2{font-family:var(--display);font-weight:600;font-size:1.3rem;margin:0;text-wrap:balance}
+p{margin:0;max-width:38rem}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2rem 1fr;gap:.75rem;align-items:start}
+.steps li::before{content:counter(s);font:600 .95rem var(--display);width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--paper)}
+.steps div{min-width:0}
+.link{background:var(--surface);border-radius:12px;padding:.9rem 1rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between}
+.link a{color:var(--green);font-weight:600;overflow-wrap:anywhere;min-width:0}
+.copy{font:500 .85rem var(--body);color:var(--ink);background:none;border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;cursor:pointer}
+dl{margin:0;display:grid;grid-template-columns:minmax(8rem,11rem) 1fr;column-gap:1.25rem;row-gap:.9rem;border-top:1px solid var(--line);padding-top:1rem}
+dt{font-weight:600}
+dd{margin:0;min-width:0;color:var(--ink)}
+@media (max-width:520px){dl{grid-template-columns:1fr;row-gap:.25rem}dd{padding-bottom:.75rem}}
+.note{color:var(--muted);font-size:.95rem}
+.addr{font-weight:600;user-select:all;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="top">
+    <div class="brand"><img src="data:image/jpeg;base64,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" alt="">ClimbRhythm Beta</div>
+    <div class="lang" role="group" aria-label="Sprache / Language">
+      <button type="button" id="lang-de" aria-pressed="true">Deutsch</button>
+      <button type="button" id="lang-en" aria-pressed="false">English</button>
+    </div>
+  </div>
+  <h1 data-de="So testest du ClimbRhythm" data-en="How to test ClimbRhythm"></h1>
+  <p class="lead" data-de="Ein Trainingstagebuch für Klettern, Bouldern, Hangboard, Kraft und Ausdauer – auf iPhone und Apple Watch. Diese Seite erklärt die Installation und was die App kann." data-en="A training log for climbing, bouldering, hangboarding, strength and endurance – on iPhone and Apple Watch. This page explains how to install it and what the app can do."></p>
+</header>
+
+<section>
+  <h2 data-de="Installieren" data-en="Install"></h2>
+  <ol class="steps">
+    <li><div data-de="Lade „TestFlight“ aus dem App Store. Die App ist von Apple und kostenlos." data-en="Get “TestFlight” from the App Store. It is made by Apple and free."></div></li>
+    <li><div data-de="Öffne den Einladungslink, den du von Detlef bekommen hast, auf deinem iPhone und tippe auf „Installieren“." data-en="Open the invitation link you received from Detlef on your iPhone and tap “Install”."></div></li>
+    <li><div data-de="Mit Apple Watch: Öffne auf dem iPhone die App „Watch“, scrolle zu „Verfügbare Apps“ und tippe bei ClimbRhythm auf „Installieren“. Bestätige danach die Installation auf der Watch; ohne diese Bestätigung dreht sich das Ladesymbol endlos." data-en="With an Apple Watch: open the “Watch” app on your iPhone, scroll to “Available Apps” and tap “Install” next to ClimbRhythm. Then confirm the installation on the Watch; without that confirmation the loading symbol keeps spinning."></div></li>
+  </ol>
+  <p class="note" data-de="Updates kommen über TestFlight. Dort siehst du bei jedem neuen Build, was sich geändert hat." data-en="Updates arrive through TestFlight. For every new build it shows what has changed."></p>
+</section>
+
+<section>
+  <h2 data-de="Eine Session aufzeichnen" data-en="Record a session"></h2>
+  <p data-de="Wähle auf der Startseite deine Sportart und tippe auf „Session starten“. Die Session läuft dann über dein ganzes Training durch. Währenddessen trägst du beliebig viele Routen, Boulder, Sätze oder Timer-Runden ein. So zeichnest du die Gesamtzeit der Session auf und zusätzlich die Belastungszeiten: wie lange du tatsächlich an der Wand, am Board oder im Satz warst. Mit Apple Watch kommt dein Puls dazu. Am Ende beendest du die Session und kannst festhalten, wie sie sich angefühlt hat, mit einem kurzen Kommentar." data-en="Pick your sport on the start screen and tap “Start session”. The session then runs through your whole training. Along the way you record as many routes, boulders, sets or timer rounds as you like. That gives you the total time of the session and, in addition, your effort times: how long you were actually on the wall, on the board or in a set. With an Apple Watch your heart rate is added. When you finish, you can note how the session felt and add a short comment."></p>
+  <dl>
+    <dt data-de="Bouldern, Klettern" data-en="Bouldering, climbing"></dt>
+    <dd data-de="Starte und beende jeden Versuch, danach bewertest du ihn kurz: Grad und Ergebnis (Versuch, Begehung, Flash), auf Wunsch Wandneigung, Länge in Metern oder Zügen, Gefühl und Notiz. Welche Angaben gefragt werden, legst du in den Einstellungen fest." data-en="Start and stop each attempt, then rate it briefly: grade and result (attempt, send, flash), optionally wall angle, length in metres or moves, feeling and a note. You choose in Settings which details are asked."></dd>
+    <dt data-de="Kraft" data-en="Strength"></dt>
+    <dd data-de="Übungen mit Sätzen, Wiederholungen und Gewicht. Du kannst Übungen in einer eigenen Sammlung speichern und in Trainings wiederverwenden." data-en="Exercises with sets, reps and weight. You can save exercises in your own library and reuse them in workouts."></dd>
+    <dt data-de="Hangboard" data-en="Hangboard"></dt>
+    <dd data-de="Übungen mit Intervall-Timer: Belastung, Pause, Runden. Einhändig geht es getrennt je Hand oder abwechselnd links und rechts in einem Timer. Mit „Weiter“ überspringst du eine Phase." data-en="Exercises with an interval timer: work, rest, rounds. One-handed work runs per hand or alternating left and right in one timer. “Next” skips a phase."></dd>
+    <dt data-de="Laufen, Rad, Wandern" data-en="Running, cycling, hiking"></dt>
+    <dd data-de="Draußen zeichnet das iPhone auf Wunsch die Strecke per GPS auf, auch bei gesperrtem Bildschirm. Pausieren oder Beenden stoppt die Aufzeichnung." data-en="Outdoors the iPhone can record your route with GPS, also while the screen is locked. Pausing or finishing stops the recording."></dd>
+    <dt data-de="Schwimmen" data-en="Swimming"></dt>
+    <dd data-de="Für das Becken wählst du 25 m oder 50 m. Die Apple Watch zählt die Bahnen; öffne ClimbRhythm auf der Watch, bevor du ins Wasser gehst. Ohne Watch trägst du die Bahnen danach ein." data-en="For the pool you choose 25 m or 50 m. The Apple Watch counts your lengths; open ClimbRhythm on the Watch before you get in the water. Without a Watch you enter the lengths afterwards."></dd>
+  </dl>
+</section>
+
+<section>
+  <h2 data-de="Apple Watch" data-en="Apple Watch"></h2>
+  <p data-de="Die Watch zeigt die laufende Session und steuert sie: Versuch starten und beenden, bewerten, Satz oder Timer starten, pausieren. Sie misst den Puls und gibt die Timer-Signale am Handgelenk. Die Session selbst startest du am iPhone; das iPhone sollte in Reichweite sein." data-en="The Watch shows the running session and controls it: start and stop an attempt, rate it, start a set or timer, pause. It measures your heart rate and gives the timer signals on your wrist. You start the session on the iPhone; keep the iPhone within reach."></p>
+</section>
+
+<section>
+  <h2 data-de="Zyklen" data-en="Cycles"></h2>
+  <p data-de="Ein Zyklus ist ein Zeitraum mit Zielen: wie oft du welche Sportart trainieren willst. Du findest die Zyklen über die Startseite; dort siehst du auch, was im laufenden Zyklus schon geschafft ist." data-en="A cycle is a period with goals: how often you want to train which sport. You reach your cycles from the start screen, which also shows what you have already done in the current cycle."></p>
+  <dl>
+    <dt data-de="Planen" data-en="Plan"></dt>
+    <dd data-de="Mit + legst du Beginn, Dauer und Ziele fest, zum Beispiel 2 Wochen mit 1 × Kraft, 3 × Klettern, 1 × Bouldern, 1 × Hangboard und 2 × Laufen. Zyklen überschneiden sich nicht; ein neuer kann direkt an den vorigen anschließen." data-en="With + you set start, length and goals, for example 2 weeks with 1 × strength, 3 × climbing, 1 × bouldering, 1 × hangboard and 2 × running. Cycles do not overlap; a new one can follow straight after the previous one."></dd>
+    <dt data-de="Einheiten" data-en="Workouts"></dt>
+    <dd data-de="Zu jedem Ziel kannst du Einheiten mit Übungen, Sätzen und Timern vorbereiten. Tippe auf eine Einheit, um sie direkt als Session zu starten; die Übungen sind dann sofort da." data-en="For each goal you can prepare workouts with exercises, sets and timers. Tap a workout to start it as a session right away; its exercises are ready at once."></dd>
+    <dt data-de="Kalender" data-en="Calendar"></dt>
+    <dd data-de="Grün sind die Tage eines Zyklus, dunkel ist heute. Tippe einen Tag an, um seinen Zyklus zu sehen; „Heute“ springt zurück." data-en="Green days belong to a cycle, the dark one is today. Tap a day to see its cycle; “Today” jumps back."></dd>
+    <dt data-de="Pause" data-en="Pause"></dt>
+    <dd data-de="Bei Krankheit oder Urlaub trägst du eine Pause ein. Der Zyklus hält an und verlängert sich um die Pausentage, die folgenden Zyklen verschieben sich. Trainings an Pausentagen bleiben im Verlauf, zählen aber nicht zum Ziel." data-en="When you are ill or away, enter a pause. The cycle stops and is extended by the paused days, and the following cycles move back. Sessions on paused days stay in your history but do not count towards the goal."></dd>
+    <dt data-de="Erinnerungen" data-en="Reminders"></dt>
+    <dd data-de="Auf Wunsch erinnert dich die App an deine Ziele, zum Beispiel zur Zyklusmitte. Während einer Pause kommen keine Erinnerungen." data-en="If you like, the app reminds you of your goals, for example at the middle of a cycle. No reminders are sent during a pause."></dd>
+    <dt data-de="Teilen" data-en="Share"></dt>
+    <dd data-de="Aus einem Zyklus erstellst du eine Bildkarte mit deinem Fortschritt, zum Beispiel für Social Media oder zum Verschicken." data-en="From a cycle you create an image card showing your progress, for example for social media or to send to someone."></dd>
+  </dl>
+</section>
+
+<section>
+  <h2 data-de="Verlauf und Statistik" data-en="History and statistics"></h2>
+  <dl>
+    <dt data-de="Verlauf" data-en="History"></dt>
+    <dd data-de="Alle Sessions mit Versuchen, Übungen und Pulskurve. Jede Session lässt sich nachträglich bearbeiten." data-en="All sessions with attempts, exercises and heart rate curve. Every session can be edited later."></dd>
+    <dt data-de="Statistik" data-en="Statistics"></dt>
+    <dd data-de="Kurven über Wochen und Monate, je Sportart; filterbar nach Zyklus, Monat oder eigenem Zeitraum. Du kannst schieben und mit zwei Fingern zoomen. Durch Halten und Ziehen liest du die Werte ab. Grade aus verschiedenen Skalen werden umgerechnet." data-en="Curves over weeks and months, per sport; filter by cycle, month or your own period. You can pan and pinch to zoom. Hold and drag to read the values. Grades from different scales are converted."></dd>
+  </dl>
+</section>
+
+<section>
+  <h2 data-de="Deine Daten" data-en="Your data"></h2>
+  <p data-de="Deine Daten gehören dir. Sie liegen auf deinem Gerät und, wenn du es einschaltest, in deiner eigenen iCloud. Apple Health ist optional. Es gibt kein Konto bei ClimbRhythm und kein Tracking." data-en="Your data is yours. It stays on your device and, if you switch it on, in your own iCloud. Apple Health is optional. There is no ClimbRhythm account and no tracking."></p>
+</section>
+
+<section>
+  <h2 data-de="Feedback" data-en="Feedback"></h2>
+  <p data-de="Am schnellsten geht es über den Brief-Knopf auf der Startseite der App oder über „Feedback senden“ in den Einstellungen. Das öffnet eine Mail mit den technischen Angaben zu deinem Gerät; du siehst alles, bevor du sendest. Auch Kleinigkeiten helfen: Was war unklar, was hat genervt, was fehlt?" data-en="The quickest way is the envelope button on the app's start screen or “Send feedback” in Settings. It opens an email with the technical details of your device; you see everything before you send. Small things help too: what was unclear, what was annoying, what is missing?"></p>
+  <p><span data-de="Oder direkt per Mail an " data-en="Or by email to "></span><span class="addr">info@flow-design.app</span></p>
+</section>
+
+<footer data-de="ClimbRhythm ist in Entwicklung. Einzelne Funktionen können sich noch ändern, und es kann etwas haken." data-en="ClimbRhythm is in development. Individual features may still change, and things can be rough here and there."></footer>
+</div>
+<script>
+(function(){
+  var lang="de";
+  try{lang=localStorage.getItem("lang")||((navigator.language||"de").slice(0,2)==="de"?"de":"en")}catch(e){lang=(navigator.language||"de").slice(0,2)==="de"?"de":"en"}
+  function show(l){
+    lang=l;document.documentElement.lang=l;
+    document.querySelectorAll("[data-de]").forEach(function(n){n.textContent=n.getAttribute("data-"+l)});
+    document.getElementById("lang-de").setAttribute("aria-pressed",l==="de");
+    document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
+    try{localStorage.setItem("lang",l)}catch(e){}
+  }
+  document.getElementById("lang-de").addEventListener("click",function(){show("de")});
+  document.getElementById("lang-en").addEventListener("click",function(){show("en")});
+  show(lang);
+})();
+</script>
+</body>
+</html>
